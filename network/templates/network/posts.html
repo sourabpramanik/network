@@ -1,0 +1,64 @@
+{% load static %}
+
+{%  for post in posts %}
+<section class="py-5">
+
+        <div class="row" >
+            <div class="col-lg-6 mx-auto">
+
+                <!-- CUSTOM BLOCKQUOTE -->
+                <blockquote class="blockquote blockquote-custom p-5 rounded" style="justify-content: center;">
+                    <div class="blockquote-custom-icon bg-black shadow-sm"><img class="card-img" style="border-radius: 999px;" alt="profile picture" width="30px"
+                        src="https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"></div>
+                    {% if user == post.user %}
+                        <button style="float: right; font-size: small; padding: 4px 10px" data-postid="{{ post.id }}"
+                                class="btn edit-btn edit">Edit
+                        </button>
+                    {% endif %}
+
+                    <p class="mb-0 mt-2 font-italic">
+                        <div class="card-text content" 
+                        id="content{{ post.id }}" 
+                        style="font-size: 1.4rem; margin-bottom: .5rem; overflow-wrap: break-word;">
+                        {{ post.content }}
+                        </div>
+                    </p>
+                    <footer class="blockquote-footer pt-4 mt-4 border-top">
+                        <cite title="Source Title"><a href="{% url 'profile' post.user.username %}" 
+                            class="text-muted no-hover-underline"
+                            style="font-size: 1rem">@{{ post.user.username }} </a> Posted at {{ post.created_at }}
+                            <div>
+                                <img src="{% static 'network/heart.svg' %}" width="17px" 
+                                style="position: relative; top: 50%; transform: perspective(1px) translateY(-10%);">
+                                <span id="likes{{ post.id }}" style="font-size: 0.95rem; margin-left: .5rem; color: #65676B">
+                                {{ post.likes.all.count }}
+                                </span>
+                            </div>
+                            {% if user.is_authenticated %}
+                            <button data-postid="{{ post.id }}" class="btn post-btn like" style="width: 32.65%; display: inline-block">
+                            {% if user in post.likes.all %}
+                            <div style="color: rgb(32, 120, 244);">
+                                <i class="mr-2 fas fa-thumbs-up"></i>Unlike
+                            </div>
+                            {% else %}
+                            <i class="mr-2 far fa-thumbs-up"></i>Like
+                            {% endif %}
+                    </button>
+                    <button class="btn post-btn" style="width: 32.65%; float:right;">Comment</button>
+                    {% else %}
+                    <a class="btn post-btn like" style="width: 32.65%; display: inline-block" href="{% url 'login' %}"><i class="mr-2 far fa-thumbs-up"></i>Like</a>
+                    <a class="btn post-btn" style="width: 32.65%; display: inline-block" href="{% url 'login' %}"><i class="mr-2 far fa-comment-alt"></i>Comment</a>
+                {% endif %}
+                            <hr style="margin-bottom: 3px; margin-top: 8px">
+                        </cite>
+                    </footer>
+                </blockquote>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <script src="{% static 'network/posts.js' %}"></script>
+{% endfor %}

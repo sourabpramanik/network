@@ -1,0 +1,419 @@
+body {
+    font-family: "Karla", sans-serif;
+    background-color: #151515;
+    min-height: 100vh;
+    color: white
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .box .user-box {
+    position: relative;
+  }
+  
+  .box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .box .user-box input:focus ~ label,
+  .box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #af1717;
+    font-size: 12px;
+  }
+  
+  .navbar {
+    transition: all 0.4s;
+}
+
+.navbar .nav-link {
+    color: #fff;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+    background: #fff;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #555;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #555;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fff;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #555;
+    }
+}
+.box a span {
+    position: absolute;
+    display: block;
+  }
+  
+.box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #af1717);
+    animation: btn-anim1 1s linear infinite;
+}
+  
+
+.blockquote-custom {
+    position: relative;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    background: rgba(0,0,0,.5);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    width: 22cm;
+}
+  
+.blockquote-custom-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -25px;
+    left: 50px;
+}
+
+.nav-link {
+    font-size: 19px;
+    font-weight: bolder;
+    color: black;
+    transition-duration: 0.25s;
+    border-radius: 999px;
+    padding-right: 20px;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.bottom-user-info {
+    font-size: 19px;
+    font-weight: bolder;
+    padding-left: 20px;
+}
+
+.active {
+    color: rgba(29,161,242,1.00);
+}
+
+.nav-link:hover {
+    color: rgba(29,161,242,1.00);
+    background-color: rgba(29,161, 242, 0.1);
+}
+
+@media (min-width: 768px) {
+    .col-md-2 {
+        -ms-flex: 0 0 21.5%;
+        flex: 0 0 21.5%;
+        max-width: 21.5%;
+    }
+}
+
+.top-nav {
+    background-color: white;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.navbar-brand {
+    font-size: 19px;
+    font-weight: bolder;
+    color: black;
+}
+
+.navbar-brand:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 576px) {
+    .col-sm-2 {
+        -ms-flex: 0 0 13%;
+        flex: 0 0 13%;
+        max-width: 13%;
+    }
+}
+
+#postContent {
+    outline: 0;
+    border: none;
+    margin-top: 1rem;
+    font-size: 19px;
+    resize: none;
+    overflow: hidden;
+}
+
+#postContent::placeholder{
+    color: #cfcfcf;
+}
+
+#postContent:focus {
+    outline: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.post-submit {
+    float: right;
+    font-weight: bolder;
+    background-color: rgba(29,161,242,1.00);
+    border-color: transparent;
+    border-radius: 999px;
+}
+
+.no-hover-underline:hover {
+    text-decoration: none;
+}
+
+a.card-title {
+    color: black;
+}
+
+.post-btn, .edit-btn {
+    border: none;
+    color: #606770;
+}
+
+.post-btn:hover{
+    background-color: rgba(0, 0, 0, .05);
+    color: #606770;
+}
+
+.btn {
+    border: none;
+}
+
+.btn:focus {
+    outline: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.edit-btn:hover {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.post-date {
+    color: #8d9498;
+}
+
+.post-profile-pic {
+    padding: 0;
+    background-position: center;
+    background-size: contain;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+}
+
+#edit-post-textarea {
+    border-width: 2px;
+    border-color: #dbdbdb;
+    border-radius: 2px;
+}
+
+#edit-post-textarea:focus {
+    box-shadow: none;
+    border-color: rgba(29,161,242,1.00);;
+}
+
+.top-profile-pic {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.follow-btn {
+    font-weight: bold;
+    color: rgba(29,161,242,1.00);
+    background: none;
+    border: 1px solid rgba(29,161,242,1.00);
+    border-radius: 999px;
+}
+
+.follow-btn:hover {
+    color: rgba(29,161,242,1.00);
+    background: none;
+}
+
+.following-btn {
+    font-weight: bold;
+    color: white;
+    background: none;
+    border: transparent;
+    border-radius: 999px;
+}
+
+.following-btn:hover {
+    color: white;
+}
+
+.page-link {
+    color: rgba(29,161,242,1.00);
+    font-size: 14px;
+}
+
+.current {
+    color: #606770;
+}
+
+.current:hover {
+    background: white;
+    color: #606770;
+    cursor: default;
+}
+
+@media (min-width: 768px) {
+    .col-md-4 {
+        -ms-flex: 0 0 28.5%;
+        flex: 0 0 28.5%;
+        max-width: 28.5%;
+    }
+}
+
+.register-btn {
+    font-weight: bold;
+    color: white;
+    background-color: rgba(29,161,242,1.00);
+    border: transparent;
+    border-radius: 999px;
+}
+
+.register-btn:hover {
+    color: white;
+    background-color: rgb(22, 150, 229);
+}
+
+.form-group.login-form-group {
+    background-color: rgb(245, 248, 250)!important;
+}
+
+label.text-muted {
+    font-size: 15px;
+    padding-left: 12px;
+    margin-bottom: 0;
+}
+
+.login-input {
+    border: none;
+    padding: 2px 12px;
+    background-color: rgb(245, 248, 250);
+    border-bottom: 2px solid rgb(118, 118, 118);
+    border-radius: 0;
+    height: inherit;
+}
+
+.login-input:focus {
+    background-color: rgb(245, 248, 250);
+    border: none;
+    outline: 0;
+    box-shadow: none;
+    border-bottom: 2px solid rgba(29,161,242,1.00);
+}
+
+.login-title {
+    font-size: 22px;
+}
+
+.login-bot-text {
+    font-size: 14px;
+}
+
+.right-grey {
+    background-color: rgb(245, 248, 250);
+}
+
+.right-subcomponent {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px;
+    height: 100px;
+    border-bottom: 1px solid rgb(232, 236, 238);
+}
+
+.right-side-pics {
+    padding: 0 12px;
+    background-origin: content-box;
+}
+
+.right-text {
+   position: relative;
+   top: 50%;
+}
+
+a.YT-link {
+    color: rgba(29,161,242,1.00);
+}
+
+a.YT-link:hover {
+    color: rgb(6, 120, 190);
+    text-decoration: none;
+}
